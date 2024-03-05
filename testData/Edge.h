@@ -34,5 +34,5 @@ public:
 
     friend bool operator>=(Edge edge1, Edge edge2);
 };
-
+#include "Edge.cpp"
 #endif

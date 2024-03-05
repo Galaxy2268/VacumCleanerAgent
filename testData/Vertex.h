@@ -31,4 +31,5 @@ public:
     PriorityQueue<Edge> getNeighbours();
 };
 
+#include "Vertex.cpp"
 #endif

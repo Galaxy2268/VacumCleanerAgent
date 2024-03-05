@@ -93,23 +93,23 @@ ListEl<T> * List<T>::split(ListEl<T> * head){
 
 template<typename T>
 ListEl<T> * List<T>::merge(ListEl<T> *first, ListEl<T> *second){
-    if (first == nullptr) 
-        return second; 
- 
-    if (second == nullptr) 
-        return first; 
- 
-    if (static_cast<Edge>(first->getData()) < second->getData()) {
+    if (first == nullptr)
+        return second;
+
+    if (second == nullptr)
+        return first;
+
+    if (first->getData() < second->getData()) {
         first->setNext(merge(first->getNext(),second));
-        first->getNext()->setPrev(first); 
+        first->getNext()->setPrev(first);
         first->setPrev(nullptr);
-        return first; 
-    }else{ 
-        second->setNext(merge(first,second->getNext())); 
-        second->getNext()->setPrev(second); 
-        second->setPrev(nullptr); 
-        return second; 
-    } 
+        return first;
+    }else{
+        second->setNext(merge(first,second->getNext()));
+        second->getNext()->setPrev(second);
+        second->setPrev(nullptr);
+        return second;
+    }
 }
 
 
