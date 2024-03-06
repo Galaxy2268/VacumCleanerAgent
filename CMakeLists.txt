@@ -7,7 +7,7 @@ include_directories(List)
 include_directories(Map)
 include_directories(Pair)
 include_directories(PriorityQueue)
-include_directories(testData)
+include_directories(Graph)
 include_directories(Vector)
 
 add_executable(VacumCleanerAgent

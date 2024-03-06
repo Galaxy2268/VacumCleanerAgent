@@ -4,11 +4,12 @@
 #include <sstream>
 #include "../List/List.h"
 #include "../PriorityQueue/PriorityQueue.h"
+#include "../Pair/Pair.h"
 #include "Vertex.h"
 #include "Edge.h"
 using namespace std;
 
-void fileReader(string filename){
+Pair<List<Vertex>, List<Edge>> fileReader(string filename){
 
     fstream myFile(filename);
 
@@ -37,12 +38,7 @@ void fileReader(string filename){
         edges.addBack(edge);
     }
 
-    for (Vertex& vertex : vertexes) {
-        cout << "Id " << vertex.getId() << " is " << vertex.getName() << endl;
-    }
-
-    for (Edge& edge : edges) {
-        cout << "From " << edge.getSource() << " -> " << edge.getDestination() << " is " << edge.getCost() << "km" <<endl;
-    }
+    myFile.close();
+    return Pair(vertexes, edges);
 
 }
