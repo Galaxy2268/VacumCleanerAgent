@@ -1,19 +1,25 @@
 #ifndef VECTOR_H
 #define VECTOR_H
-#include "../List/List.h"
 
 template <class T>
 class Vector{
 
 private:
-List<T> vector;
+int length;
+int capacity;
+T data[];
 
+void expand();
+
+void shrink();
 
 
 public:
 
 template <typename... Args>
 Vector(Args... data);
+
+~Vector();
 
 void clear();
 
@@ -23,7 +29,13 @@ void pushBack(T data);
 
 T popBack();
 
-T getEl(int index);
+void pushFront(T data);
+
+T popFront();
+
+T operator[](int index) const;
+
+T& operator[](int index);
 
 T getFirst();
 
@@ -31,6 +43,7 @@ T getLast();
 
 
 };
+
 
 
 #include "Vector.cpp"
