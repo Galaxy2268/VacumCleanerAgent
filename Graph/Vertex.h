@@ -16,8 +16,6 @@ private:
 public:
     Vertex(int vertexId, string vertexName);
 
-    Vertex(int vertexId, PriorityQueue<Edge> vertexNeighbours);
-
     void setId(int vertexId);
 
     void setName(string vertexName);
@@ -31,4 +29,5 @@ public:
     PriorityQueue<Edge> getNeighbours();
 };
 
+#include "Vertex.cpp"
 #endif

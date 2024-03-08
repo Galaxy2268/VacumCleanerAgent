@@ -2,14 +2,9 @@
 #include "Vertex.h"
 using namespace std;
 
-Vertex::Vertex(int vertexId, string vertexName){
+Vertex::Vertex(int vertexId, string vertexName): vertexNeighbours(){
     this->vertexId = vertexId;
     this->vertexName = vertexName;
-}
-
-Vertex::Vertex(int vertexId, PriorityQueue<Edge> vertexNeighbours){
-    this->vertexId = vertexId;
-    this->vertexNeighbours = vertexNeighbours;
 }
 
 void Vertex::setId(int vertexId){

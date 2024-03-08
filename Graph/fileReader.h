@@ -39,6 +39,6 @@ Pair<List<Vertex>, List<Edge>> fileReader(string filename){
     }
 
     myFile.close();
-    return Pair(vertexes, edges);
+    return Pair<List<Vertex>, List<Edge>> (vertexes, edges);
 
 }

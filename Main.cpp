@@ -6,17 +6,17 @@
 #include "PriorityQueue/PriorityQueue.h"
 #include "Map/Map.h"
 #include "List/ListEl.h"
-#include "testData/Edge.h"
-#include "testData/Vertex.h"
-#include "testData/GraphEdges.h"
+#include "Graph/Edge.h"
+#include "Graph/Vertex.h"
+#include "Graph/GraphEdges.h"
 
 using namespace std;
 
 //Main function
 int main(){
 
-
-    cout << "Hello";
-
+    string filename = "graph.txt";
+    List<Vertex> GRAPHEDGES = graphEdges(filename);
+    cout << "Hello World";
 
 }

@@ -8,11 +8,6 @@ Edge::Edge(int source, int destination, int cost){
     this->cost = cost;
 }
 
-Edge::Edge(int destination, int cost){
-    this->destination = destination;
-    this->cost = cost;
-}
-
 void Edge::setSource(int source){
     this->source = source;
 }

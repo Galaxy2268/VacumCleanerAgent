@@ -3,32 +3,23 @@
 #include "Vertex.h"
 #include "Edge.h"
 #include "../PriorityQueue/PriorityQueue.h"
+#include "../List/List.h"
 
 List<Vertex> graphEdges(string filename){
 
-    fileReader(filename);
-    List<Vertex>vertexes = fileReader(filename).getFirst();
-    List<Edge> edges = fileReader(filename).getSecond();
+    Pair<List<Vertex>, List<Edge>> pair = fileReader(filename);
 
+    List<Vertex>vertexes = pair.getFirst();
+    List<Edge> edges = pair.getSecond();
 
-    List<Vertex> graphEdges;
-
-
-for (int i = 0; i < vertexes.size(); i++) {
-    Vertex& vertex = vertexes.getReferenceById(i);
-    PriorityQueue<Edge> vertexNeighbours;
-    for (int j = 0; j < edges.size(); j++) {
-        Edge& edge = edges.getReferenceById(j);
-        if (edge.getSource() ==  vertex.getId()) {
-            Edge neighbour(edge.getDestination(), edge.getCost());
-            vertexNeighbours.push(neighbour);
+    int j = 0;
+    for (int i = 0; i < edges.size(); i++) {
+        if (edges.getElById(i).getSource() != vertexes.getElById(j).getId()) {
+            j++;
         }
+        vertexes.getElById(j).addNeighbour(edges.getElById(i));
     }
 
-    Vertex graphVertex(vertex.getId(), vertexNeighbours);
-    graphEdges.addBack(graphVertex);
-}
-
-    return graphEdges;
+    return vertexes;
 
 }

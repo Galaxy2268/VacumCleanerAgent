@@ -14,8 +14,6 @@ private:
 public:
     Edge(int source, int destination, int cost);
 
-    Edge (int destination, int cost);
-
     void setSource(int source);
 
     void setDestination(int destination);
