@@ -9,11 +9,11 @@
 #include "Edge.h"
 using namespace std;
 
-Pair<List<Vertex>, List<Edge>> fileReader(string filename){
+Pair<List<Vertex*>*, List<Edge*>*> fileReader(string filename){
 
     fstream myFile(filename);
 
-    List<Vertex> vertexes;
+    List<Vertex*>* vertexes = new List<Vertex*>();
     if (myFile.is_open()) {
         int vertexId;
         string vertexName;
@@ -24,21 +24,22 @@ Pair<List<Vertex>, List<Edge>> fileReader(string filename){
             }
             istringstream iss(line);
             iss >> vertexId >> vertexName;
-            Vertex vertex(vertexId, vertexName);
-            vertexes.addBack(vertex);
+            Vertex* vertex = new Vertex(vertexId, vertexName);
+            vertexes->addBack(vertex);
         }
     } else {
         cout << "Error opening file: " << filename << endl;
     }
 
-    List<Edge> edges;
+    List<Edge*>* edges = new List<Edge*>();
     int source, destination, cost;
     while (myFile >> source >> destination >> cost){
-        Edge edge(source, destination, cost);
-        edges.addBack(edge);
+        Edge* edge = new Edge(source, destination, cost);
+        edges->addBack(edge);
     }
 
     myFile.close();
-    return Pair<List<Vertex>, List<Edge>> (vertexes, edges);
+    Pair<List<Vertex*>*, List<Edge*>*> result(vertexes, edges);
+    return result;
 
 }

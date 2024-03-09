@@ -2,13 +2,11 @@
 #include <iostream>
 
 template <typename T1, typename T2>
-Pair<T1,T2>::Pair(T1 first, T2 second){
-    this->first = first;
-    this->second = second;
-}
+Pair<T1,T2>::Pair(T1& first, T2& second): first(first), second(second) {}
 
 template <typename T1, typename T2>
-Pair<T1,T2>::Pair(){}
+Pair<T1,T2>::Pair(): first(), second(){}
+
 
 template <typename T1, typename T2>
 T1 Pair<T1,T2>::getFirst(){
@@ -21,12 +19,12 @@ T2 Pair<T1,T2>::getSecond(){
 }
 
 template <typename T1, typename T2>
-void Pair<T1,T2>::setFirst(T1 first){
+void Pair<T1,T2>::setFirst(T1& first){
     this->first = first;
 }
 
 template <typename T1, typename T2>
-void Pair<T1,T2>::setSecond(T2 second){
+void Pair<T1,T2>::setSecond(T2& second){
     this->second = second;
 }
 
@@ -34,7 +32,4 @@ template <typename T1, typename T2>
 void Pair<T1,T2>::print(){
     std::cout << getFirst() << " " << getSecond() << "\n";
 }
-
-
-
 

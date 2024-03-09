@@ -12,11 +12,19 @@
 
 using namespace std;
 
+void test(){
+    string filename = "graph.txt";
+    List<Vertex*>* GRAPHEDGES = graphEdges(filename);
+    cout << "Hello World";
+}
+
 //Main function
 int main(){
 
-    string filename = "graph.txt";
-    List<Vertex> GRAPHEDGES = graphEdges(filename);
-    cout << "Hello World";
+    test();
+    cout << "dd";
+    cout << "dd";
+    cout << "dd";
+
 
 }
