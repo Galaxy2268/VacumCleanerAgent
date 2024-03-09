@@ -4,6 +4,13 @@ template<typename T>
 ListEl<T>::ListEl(T data) : data(data), prev(nullptr), next(nullptr) {}
 
 template<typename T>
+ListEl<T>::~ListEl(){
+    if constexpr (std::is_pointer_v<T>) {
+        delete data;
+    }
+}
+
+template<typename T>
 void ListEl<T>::setPrev(ListEl<T> * prev){
     this->prev = prev;
 }

@@ -12,6 +12,8 @@ ListEl<T> * next;
 public:
 ListEl(T data);
 
+~ListEl();
+
 
 void setPrev(ListEl<T> * prev);
 
