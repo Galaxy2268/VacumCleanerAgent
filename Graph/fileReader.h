@@ -9,7 +9,7 @@
 #include "Edge.h"
 using namespace std;
 
-Pair<List<Vertex*>*, List<Edge*>*> fileReader(string filename){
+Pair<List<Vertex*>*, List<Edge>*> fileReader(string filename){
 
     fstream myFile(filename);
 
@@ -31,15 +31,15 @@ Pair<List<Vertex*>*, List<Edge*>*> fileReader(string filename){
         cout << "Error opening file: " << filename << endl;
     }
 
-    List<Edge*>* edges = new List<Edge*>();
+    List<Edge>* edges = new List<Edge>();
     int source, destination, cost;
     while (myFile >> source >> destination >> cost){
-        Edge* edge = new Edge(source, destination, cost);
+        Edge edge(source, destination, cost);
         edges->addBack(edge);
     }
 
     myFile.close();
-    Pair<List<Vertex*>*, List<Edge*>*> result(vertexes, edges);
+    Pair<List<Vertex*>*, List<Edge>*> result(vertexes, edges);
     return result;
 
 }

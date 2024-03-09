@@ -15,6 +15,8 @@ using namespace std;
 void test(){
     string filename = "graph.txt";
     List<Vertex*>* GRAPHEDGES = graphEdges(filename);
+    List<Vertex*>* GRAPHEDGES1 = graphEdges(filename);
+    GRAPHEDGES->clear();
     cout << "Hello World";
 }
 
