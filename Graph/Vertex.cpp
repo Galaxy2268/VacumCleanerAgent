@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Vertex.h"
-using namespace std;
+
 
 Vertex::Vertex(int vertexId, string vertexName): vertexNeighbours(){
     this->vertexId = vertexId;

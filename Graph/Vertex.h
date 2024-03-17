@@ -4,7 +4,6 @@
 #include <iostream>
 #include "Edge.h"
 #include "../PriorityQueue/PriorityQueue.h"
-using namespace std;
 
 class Vertex{
 

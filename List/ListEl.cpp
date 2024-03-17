@@ -4,10 +4,8 @@ template<typename T>
 ListEl<T>::ListEl(T data) : data(data), prev(nullptr), next(nullptr) {}
 
 template<typename T>
-ListEl<T>::~ListEl(){
-    if constexpr (std::is_pointer_v<T>) {
-        delete data;
-    }
+ListEl<T>::~ListEl() {
+    delete_me<T>::destroy(data);
 }
 
 template<typename T>

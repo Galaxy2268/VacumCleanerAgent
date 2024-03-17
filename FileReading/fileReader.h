@@ -5,11 +5,10 @@
 #include "../List/List.h"
 #include "../PriorityQueue/PriorityQueue.h"
 #include "../Pair/Pair.h"
-#include "Vertex.h"
-#include "Edge.h"
-using namespace std;
+#include "../Graph/Vertex.h"
+#include "../Graph/Edge.h"
 
-Pair<List<Vertex*>*, List<Edge>*> fileReader(string filename){
+inline Pair<List<Vertex*>*, List<Edge>*> fileReader(string filename){
 
     fstream myFile(filename);
 

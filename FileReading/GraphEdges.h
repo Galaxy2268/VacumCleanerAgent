@@ -1,11 +1,12 @@
 #include <iostream>
 #include "fileReader.h"
-#include "Vertex.h"
-#include "Edge.h"
-#include "../PriorityQueue/PriorityQueue.h"
 #include "../List/List.h"
+#include "../PriorityQueue/PriorityQueue.h"
+#include "../Pair/Pair.h"
+#include "../Graph/Vertex.h"
+#include "../Graph/Edge.h"
 
-List<Vertex*>* graphEdges(string filename){
+inline List<Vertex*>* graphEdges(string filename){
 
     Pair<List<Vertex*>*, List<Edge>*> pair = fileReader(filename);
 

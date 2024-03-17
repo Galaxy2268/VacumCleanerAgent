@@ -3,12 +3,15 @@ project(VacumCleanerAgent)
 
 set(CMAKE_CXX_STANDARD 23)
 
-include_directories(List)
-include_directories(Map)
-include_directories(Pair)
-include_directories(PriorityQueue)
-include_directories(Graph)
-include_directories(Vector)
+include_directories(
+        List
+        Map
+        Pair
+        PriorityQueue
+        Graph
+        Vector
+        FileReading
+)
 
 add_executable(VacumCleanerAgent
         Main.cpp)

@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Edge.h"
-using namespace std;
 
 Edge::Edge(int source, int destination, int cost){
     this->source = source;

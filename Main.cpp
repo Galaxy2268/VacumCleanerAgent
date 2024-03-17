@@ -8,24 +8,19 @@
 #include "List/ListEl.h"
 #include "Graph/Edge.h"
 #include "Graph/Vertex.h"
-#include "Graph/GraphEdges.h"
+#include "Graph/Graph.h"
 
-using namespace std;
 
-void test(){
-    string filename = "graph.txt";
-    List<Vertex*>* GRAPHEDGES = graphEdges(filename);
-    List<Vertex*>* GRAPHEDGES1 = graphEdges(filename);
-    GRAPHEDGES->clear();
-    cout << "Hello World";
-}
 
-//Main function
+
+
 int main(){
 
-    test();
     cout << "dd";
     cout << "dd";
+    cout << "dd";
+    Graph graph;
+    graph.setGraph("../graph.txt");
     cout << "dd";
 
 
