@@ -15,6 +15,8 @@ public:
     void setGraph(string file);
 
     void print();
+
+    void printPath(int start, int end);
 };
 
 

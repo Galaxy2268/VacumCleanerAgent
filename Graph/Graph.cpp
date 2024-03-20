@@ -13,7 +13,22 @@ void Graph::setGraph(string file) {
 }
 
 void Graph::print() {
- "todo";
+    if(this->graph.isEmpty()) return;
+
+    for(int i = 0; i < this->graph.size(); i++){
+        cout << this->graph.getElById(i).getId();
+        cout << " ||";
+        for(int j = 0; j < this->graph.getElById(i).getNeighbours().size(); j++){
+            cout << " -> ";
+            cout << this->graph.getElById(i).getNeighbours().getEl(j).getDestination();
+        }
+        cout << "\n";
+    }
+
+}
+
+void Graph::printPath(int start, int end) {
+    //TODO: create searching algorithm using DFS
 }
 
 

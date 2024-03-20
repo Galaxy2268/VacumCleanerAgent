@@ -33,8 +33,10 @@ void push(T data);
 
 T pop();
 
+T getEl(int id);
+
 };
 
-  
+
 #include "PriorityQueue.cpp"
 #endif

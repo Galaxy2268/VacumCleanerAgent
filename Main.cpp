@@ -16,12 +16,10 @@
 
 int main(){
 
-    cout << "dd";
-    cout << "dd";
-    cout << "dd";
     Graph graph;
     graph.setGraph("../graph.txt");
-    cout << "dd";
+    graph.print();
+
 
 
 }
